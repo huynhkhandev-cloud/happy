@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta
             name="viewport"
-            content="width=device-width, initial-scale=1, viewport-fit=cover"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
         />
         <title>Chúc mừng sinh nhật anh Phát 🎂😹</title>
         <style>
@@ -45,6 +45,18 @@
             }
             * {
                 box-sizing: border-box;
+                -webkit-tap-highlight-color: transparent;
+            }
+            html,
+            body,
+            button,
+            .cat,
+            .flip,
+            .candle {
+                touch-action: manipulation;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
             }
             html {
                 scroll-padding-top: env(safe-area-inset-top, 0px);
@@ -416,7 +428,9 @@
         </div>
         <canvas id="fx"></canvas>
         <main>
-            <div class="role">👔 Technical Supervisor</div>
+            <div class="role">
+                👔 Technical Supervisor · Chuyên gia nhìn log rồi thở dài
+            </div>
             <h1>Happy Birthday<br /><span>anh Huỳnh Tuấn Phát!</span></h1>
             <svg
                 id="cat"
@@ -468,7 +482,8 @@
                 <circle cx="104" cy="48" r="4" fill="#fff" />
             </svg>
             <div class="bubble" id="say">
-                Bấm vào mèo để vuốt thử đi anh Phát 😼
+                Vuốt tao đi sen Phát, tao biết mày là sếp nhưng ở đây tao mới là
+                sếp 😼
             </div>
             <p class="small">Số lần vuốt mèo: <b id="cnt">0</b></p>
 
@@ -730,6 +745,14 @@
                     'Meo meo = "Chúc anh sinh nhật vui, đừng bắt tụi em tăng ca" 🙏',
                     "Mèo đã kiểm tra: bánh kem có 0 bug, 100% ngon 🍰",
                     "Anh ơi, cho mèo xin ít bonus mua hạt nha 🥺",
+                    "Sinh nhật mà còn ngồi coi web, anh Phát ơi đi nhậu đi 🍻",
+                    "Mèo vừa fix bug bằng cách ngồi lên bàn phím: aaaaaaaaaaaaa 🐾",
+                    'Tuổi mới chúc anh: không bị hỏi "anh ơi cái này sao lỗi" lúc đang ăn cơm 🍚',
+                    "Mèo đã review anh Phát: LGTM, nhưng bụng hơi to, cần refactor 😹",
+                    "Em là mèo nên em không biết code, nhưng em biết anh Phát giỏi hơn Backend Lỏ 🤭",
+                    "Anh bấm hoài vậy, tay không mỏi à? Bấm nữa tui tính phí 10k/lần 💸",
+                    "Nghe nói anh Phát từng fix bug bằng cách nhìn chằm chằm vào màn hình. Bug sợ quá tự biến mất 👀",
+                    "Chúc anh Phát ăn gì cũng không mập, nhậu gì cũng không say, code gì cũng không bug (ước thôi) 🙏",
                 ];
                 var cnt = 0,
                     cat = $("#cat"),
@@ -763,6 +786,16 @@
                     talk(jokes[Math.floor(Math.random() * jokes.length)]);
                     scrollTo({ top: 0, behavior: "smooth" });
                 };
+                document.addEventListener("gesturestart", function (e) {
+                    e.preventDefault();
+                });
+                document.addEventListener(
+                    "dblclick",
+                    function (e) {
+                        e.preventDefault();
+                    },
+                    { passive: false },
+                );
                 document.addEventListener("pointermove", function (e) {
                     var r = cat.getBoundingClientRect(),
                         dx = e.clientX - (r.left + r.width / 2),
@@ -830,19 +863,19 @@
                         e: "🤖",
                         n: "Lead AI",
                         h: "Lật để xem output",
-                        t: '<b>Prompt:</b> "Chúc mừng sinh nhật anh Phát"<br><br>Chúc anh luôn đạt 100% accuracy, không bao giờ bị <i>hallucinate</i> khi họp, và mọi yêu cầu của khách đều rõ ràng ngay lần đầu (ảo thật đấy). Tuổi mới: loss giảm, happiness tăng, tuyệt đối không <i>overfit</i> vào việc bắt team làm lại. Nếu lời chúc này sai, xin nhớ đây là model mới train, anh bỏ qua cho em 🙏😹',
+                        t: '<b>Prompt:</b> "Chúc mừng sinh nhật anh Phát"<br><br>Chúc anh luôn đạt 100% accuracy, không bao giờ bị <i>hallucinate</i> khi họp, và mọi yêu cầu của khách đều rõ ràng ngay lần đầu (ảo thật đấy). Tuổi mới: loss giảm, happiness tăng, tuyệt đối không <i>overfit</i> vào việc bắt team làm lại. Nếu lời chúc này sai, xin nhớ đây là model mới train, anh bỏ qua cho em 🙏😹<br><br>P/S: Em nhờ AI viết lời chúc này, nó bảo "Anh Phát quá đỉnh, tôi hết token để khen" 🤖💦',
                     },
                     {
                         e: "🛠️",
                         n: "Lead DevOps",
                         h: "Lật để xem changelog",
-                        t: "<b>Release note v.Sinh-Nhat:</b><br><br>✅ Uptime 99.99% cho sức khoẻ anh<br>✅ Pipeline xanh lè, không đỏ lúc 2h sáng<br>✅ Zero hotfix tối thứ Sáu<br>✅ Rollback chỉ dùng khi lỡ bấm nhầm, không dùng cho tuổi tác (vì không rollback được 😼)<br><br>Chúc anh luôn scale lương, không scale deadline. Alert nào cũng chỉ là chuông báo bánh kem đến!",
+                        t: "<b>Release note v.Sinh-Nhat:</b><br><br>✅ Uptime 99.99% cho sức khoẻ anh<br>✅ Pipeline xanh lè, không đỏ lúc 2h sáng<br>✅ Zero hotfix tối thứ Sáu<br>✅ Rollback chỉ dùng khi lỡ bấm nhầm, không dùng cho tuổi tác (vì không rollback được 😼)<br><br>Chúc anh luôn scale lương, không scale deadline. Alert nào cũng chỉ là chuông báo bánh kem đến!<br><br>P/S: Anh mà bắt em deploy lúc 5h chiều thứ Sáu là em xóa cluster rồi nghỉ việc đi bán trà tắc 🧋",
                     },
                     {
                         e: "🐛",
                         n: "Backend Lỏ",
                         h: "Lật để xem log",
-                        t: '<b>[INFO]</b> Em code lỏ nhưng lời chúc thì xịn.<br><b>[WARN]</b> Hôm nay xin anh đừng "Request Changes" PR của em.<br><b>[ERROR 500]</b> Em xúc động quá nên crash.<br><br>Chúc anh ít bug, nhiều bonus, ít họp, nhiều cơm. Nếu API trả về chậm, đó là em đang cố gửi trọn vẹn tình cảm. Anh nhớ nương tay với tụi em hoài nha, sếp yêu 🥺❤️',
+                        t: '<b>[INFO]</b> Em code lỏ nhưng lời chúc thì xịn.<br><b>[WARN]</b> Hôm nay xin anh đừng "Request Changes" PR của em.<br><b>[ERROR 500]</b> Em xúc động quá nên crash.<br><br>Chúc anh ít bug, nhiều bonus, ít họp, nhiều cơm. Nếu API trả về chậm, đó là em đang cố gửi trọn vẹn tình cảm. Anh nhớ nương tay với tụi em hoài nha, sếp yêu 🥺❤️<br><br>P/S: Em có viết unit test cho lời chúc này, test fail nhưng em vẫn merge thẳng main 😎',
                     },
                 ];
                 var cards = $("#cards");
@@ -877,6 +910,9 @@
                         "$ docker build -t birthday:latest .  ✔ Built (mèo nén image còn 0 byte)",
                         "$ pytest   ✔ 1 passed: anh_phat_is_the_best",
                         '$ ai-review  ✔ "LGTM, xuất sắc, 10 điểm" (AI không dám chê)',
+                        "$ sudo rm -rf deadline/  ⚠ Permission denied (sếp Phát giữ quyền root)",
+                        "$ git blame bug.js  → Backend Lỏ 🐛 (không bất ngờ)",
+                        "$ npm install happiness  ✔ added 9999 packages, 0 vulnerabilities, 1 mèo",
                         "$ terraform apply   ✔ Tạo 1 bánh kem, 5 nến, 99 con mèo",
                         "$ kubectl rollout status   ✔ 3/3 pods happy",
                         "$ curl /wish → 200 OK 🎉",
