@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <title>Chúc mừng sinh nhật anh Phát 🎂😹</title>
+        <style>
+            :root {
+                --bg: #fff6e5;
+                --card: #ffffff;
+                --ink: #2b2140;
+                --sub: #6b5f85;
+                --pri: #ff5d8f;
+                --acc: #ffb703;
+                --ok: #2bb673;
+                --shadow: 0 8px 24px rgba(80, 40, 120, 0.15);
+                box-sizing: border-box;
+                padding-top: env(safe-area-inset-top, 0px);
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) {
+                    --bg: #150f24;
+                    --card: #241a3b;
+                    --ink: #f4eeff;
+                    --sub: #b9aad6;
+                    --pri: #ff7aa6;
+                    --acc: #ffd166;
+                    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+                    color-scheme: dark;
+                }
+            }
+            :root[data-theme="dark"] {
+                --bg: #150f24;
+                --card: #241a3b;
+                --ink: #f4eeff;
+                --sub: #b9aad6;
+                --pri: #ff7aa6;
+                --acc: #ffd166;
+                --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+                color-scheme: dark;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html {
+                scroll-padding-top: env(safe-area-inset-top, 0px);
+            }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--ink);
+                font-family: "Baloo 2", "Segoe UI", system-ui, sans-serif;
+                overflow-x: hidden;
+                transition:
+                    background 0.4s,
+                    color 0.4s;
+            }
+            .bar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 20;
+                display: flex;
+                gap: 8px;
+                padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px;
+            }
+            .bar button {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                border: 0;
+                background: var(--card);
+                box-shadow: var(--shadow);
+                font-size: 20px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .bar button:active {
+                transform: scale(0.85) rotate(20deg);
+            }
+            #fx {
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                z-index: 30;
+                width: 100%;
+                height: 100%;
+            }
+            .rain {
+                position: fixed;
+                top: -40px;
+                z-index: 0;
+                pointer-events: none;
+                animation: fall linear forwards;
+                opacity: 0.5;
+            }
+            @keyframes fall {
+                to {
+                    transform: translateY(110vh) rotate(360deg);
+                }
+            }
+            main {
+                position: relative;
+                z-index: 1;
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 64px 16px 48px;
+                text-align: center;
+            }
+            h1 {
+                font-size: clamp(28px, 7vw, 48px);
+                margin: 8px 0 4px;
+                line-height: 1.1;
+            }
+            h1 span {
+                display: inline-block;
+                background: linear-gradient(90deg, var(--pri), var(--acc));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: wob 2s ease-in-out infinite;
+            }
+            @keyframes wob {
+                50% {
+                    transform: rotate(-3deg) scale(1.05);
+                }
+            }
+            .role {
+                display: inline-block;
+                background: var(--card);
+                padding: 4px 14px;
+                border-radius: 99px;
+                box-shadow: var(--shadow);
+                color: var(--sub);
+                font-weight: 600;
+            }
+            .cat {
+                width: min(240px, 62vw);
+                cursor: pointer;
+                margin: 12px auto 0;
+                display: block;
+                animation: bob 2.4s ease-in-out infinite;
+                -webkit-tap-highlight-color: transparent;
+                user-select: none;
+            }
+            .cat.hit {
+                animation: boing 0.5s;
+            }
+            @keyframes bob {
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+            @keyframes boing {
+                30% {
+                    transform: scale(1.2, 0.8);
+                }
+                60% {
+                    transform: scale(0.9, 1.15);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            .eye {
+                animation: blink 4s infinite;
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+            @keyframes blink {
+                95%,
+                100% {
+                    transform: scaleY(0.1);
+                }
+            }
+            .bubble {
+                min-height: 52px;
+                margin: 6px auto 0;
+                max-width: 420px;
+                background: var(--card);
+                padding: 10px 14px;
+                border-radius: 16px;
+                box-shadow: var(--shadow);
+                font-weight: 600;
+            }
+            .small {
+                color: var(--sub);
+                font-size: 14px;
+                margin: 6px 0 0;
+            }
+            section {
+                margin-top: 36px;
+            }
+            h2 {
+                font-size: 24px;
+                margin: 0 0 12px;
+            }
+            .btn {
+                border: 0;
+                background: var(--pri);
+                color: #fff;
+                font: inherit;
+                font-weight: 700;
+                padding: 12px 22px;
+                border-radius: 99px;
+                box-shadow: var(--shadow);
+                cursor: pointer;
+                transition: transform 0.15s;
+            }
+            .btn:active {
+                transform: scale(0.92);
+            }
+            .cake {
+                position: relative;
+                width: 200px;
+                margin: 30px auto 8px;
+                height: 150px;
+            }
+            .layer {
+                position: absolute;
+                left: 0;
+                right: 0;
+                border-radius: 14px;
+            }
+            .l1 {
+                bottom: 0;
+                height: 60px;
+                background: #c98b5e;
+            }
+            .l2 {
+                bottom: 50px;
+                height: 50px;
+                left: 20px;
+                right: 20px;
+                background: #ff8fb1;
+            }
+            .l3 {
+                bottom: 0;
+                height: 0;
+            }
+            .candles {
+                position: absolute;
+                bottom: 98px;
+                left: 30px;
+                right: 30px;
+                display: flex;
+                justify-content: space-around;
+            }
+            .candle {
+                width: 10px;
+                height: 34px;
+                background: repeating-linear-gradient(
+                    #ffe066 0 6px,
+                    #ff5d8f 6px 12px
+                );
+                border-radius: 3px;
+                position: relative;
+                cursor: pointer;
+            }
+            .flame {
+                position: absolute;
+                left: 50%;
+                top: -20px;
+                width: 14px;
+                height: 20px;
+                margin-left: -7px;
+                background: radial-gradient(#fff 15%, #ffb703 55%, #ff5d00);
+                border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+                animation: fl 0.3s ease-in-out infinite alternate;
+                transform-origin: bottom;
+            }
+            .candle.off .flame {
+                display: none;
+            }
+            .candle.off::after {
+                content: "~";
+                position: absolute;
+                top: -30px;
+                left: 1px;
+                animation: smoke 1.2s forwards;
+                color: var(--sub);
+            }
+            @keyframes fl {
+                to {
+                    transform: scale(1.15, 0.9) rotate(5deg);
+                }
+            }
+            @keyframes smoke {
+                to {
+                    transform: translateY(-30px);
+                    opacity: 0;
+                }
+            }
+            .grid {
+                display: grid;
+                gap: 16px;
+                grid-template-columns: 1fr;
+            }
+            @media (min-width: 640px) {
+                .grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            .flip {
+                perspective: 900px;
+                height: 300px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .in {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.7s;
+                transform-style: preserve-3d;
+            }
+            .flip.on .in {
+                transform: rotateY(180deg);
+            }
+            .face {
+                position: absolute;
+                inset: 0;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                background: var(--card);
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+            .back {
+                transform: rotateY(180deg);
+                font-size: 14.5px;
+                text-align: left;
+                justify-content: flex-start;
+                overflow: auto;
+            }
+            .emo {
+                font-size: 54px;
+                animation: bob 2s ease-in-out infinite;
+            }
+            .name {
+                font-weight: 800;
+                font-size: 20px;
+            }
+            .hint {
+                color: var(--sub);
+                font-size: 13px;
+            }
+            .term {
+                background: #0d1117;
+                color: #7ee787;
+                font-family: ui-monospace, Menlo, Consolas, monospace;
+                text-align: left;
+                border-radius: 14px;
+                padding: 12px;
+                min-height: 150px;
+                font-size: 13px;
+                margin-top: 12px;
+                overflow-x: auto;
+                box-shadow: var(--shadow);
+            }
+            .term div {
+                white-space: pre;
+            }
+            .bar2 {
+                height: 10px;
+                background: var(--card);
+                border-radius: 99px;
+                overflow: hidden;
+                margin-top: 10px;
+                box-shadow: var(--shadow);
+            }
+            .bar2 i {
+                display: block;
+                height: 100%;
+                width: 0;
+                background: linear-gradient(90deg, var(--ok), var(--acc));
+                transition: width 0.5s;
+            }
+            footer {
+                margin-top: 40px;
+                color: var(--sub);
+                font-size: 14px;
+            }
+            .pop {
+                animation: pop 0.4s;
+            }
+            @keyframes pop {
+                0% {
+                    transform: scale(0.6);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bar">
+            <button id="snd" title="Âm thanh" aria-label="Bật tắt âm thanh">
+                🔊</button
+            ><button id="thm" title="Sáng/Tối" aria-label="Đổi giao diện">
+                🌓
+            </button>
+        </div>
+        <canvas id="fx"></canvas>
+        <main>
+            <div class="role">👔 Technical Supervisor</div>
+            <h1>Happy Birthday<br /><span>anh Huỳnh Tuấn Phát!</span></h1>
+            <svg
+                id="cat"
+                class="cat"
+                viewBox="0 0 200 200"
+                role="img"
+                aria-label="Mèo đội nón sinh nhật, bấm để vuốt"
+            >
+                <polygon points="30,80 40,20 85,50" fill="#f4a259" />
+                <polygon points="170,80 160,20 115,50" fill="#f4a259" />
+                <polygon points="42,66 46,36 68,52" fill="#ffb3c7" />
+                <polygon points="158,66 154,36 132,52" fill="#ffb3c7" />
+                <ellipse cx="100" cy="115" rx="75" ry="65" fill="#f4a259" />
+                <path
+                    d="M70 60q10-14 20 0M110 60q10-14 20 0"
+                    stroke="#c97b2e"
+                    stroke-width="6"
+                    fill="none"
+                    stroke-linecap="round"
+                />
+                <ellipse cx="100" cy="140" rx="34" ry="24" fill="#fff0dc" />
+                <g class="eye">
+                    <ellipse cx="68" cy="105" rx="15" ry="18" fill="#fff" />
+                    <circle class="pp" cx="68" cy="105" r="8" fill="#2b2140" />
+                </g>
+                <g class="eye">
+                    <ellipse cx="132" cy="105" rx="15" ry="18" fill="#fff" />
+                    <circle class="pp" cx="132" cy="105" r="8" fill="#2b2140" />
+                </g>
+                <polygon points="92,126 108,126 100,136" fill="#ff5d8f" />
+                <path
+                    id="mouth"
+                    d="M100 136q-8 12-18 6M100 136q8 12 18 6"
+                    stroke="#2b2140"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                />
+                <g stroke="#2b2140" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="20" y1="125" x2="62" y2="132" />
+                    <line x1="20" y1="145" x2="62" y2="140" />
+                    <line x1="180" y1="125" x2="138" y2="132" />
+                    <line x1="180" y1="145" x2="138" y2="140" />
+                </g>
+                <polygon points="100,2 70,58 130,58" fill="#7c5cff" />
+                <circle cx="100" cy="4" r="7" fill="#ffd166" />
+                <circle cx="90" cy="40" r="4" fill="#ffd166" />
+                <circle cx="108" cy="28" r="4" fill="#ff5d8f" />
+                <circle cx="104" cy="48" r="4" fill="#fff" />
+            </svg>
+            <div class="bubble" id="say">
+                Bấm vào mèo để vuốt thử đi anh Phát 😼
+            </div>
+            <p class="small">Số lần vuốt mèo: <b id="cnt">0</b></p>
+
+            <section>
+                <h2>🎂 Thổi nến nào!</h2>
+                <div class="cake">
+                    <div class="candles" id="candles"></div>
+                    <div class="layer l2"></div>
+                    <div class="layer l1"></div>
+                </div>
+                <button class="btn" id="blow">🌬️ Thổi nến + hát mừng</button>
+                <p class="small">Hoặc bấm từng ngọn nến cho đỡ tốn hơi</p>
+            </section>
+
+            <section>
+                <h2>💌 Lời chúc từ team (bấm để lật)</h2>
+                <div class="grid" id="cards"></div>
+            </section>
+
+            <section>
+                <h2>🚀 Deploy lời chúc lên production</h2>
+                <button class="btn" id="dep">▶ Run pipeline</button>
+                <div class="bar2"><i id="pg"></i></div>
+                <div class="term" id="term">
+                    <div>$ chờ anh Phát bấm nút...</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>😹 Mèo nói gì với anh?</h2>
+                <button class="btn" id="rnd">🎲 Quẹt thêm một câu</button>
+            </section>
+
+            <footer>
+                Made with ❤️ + 🐱 bởi team AI, DevOps &amp; Backend (Lỏ)<br />Không
+                có con mèo nào bị deploy lỗi trong quá trình làm trang này.
+            </footer>
+        </main>
+
+        <script>
+            (function () {
+                var $ = function (s) {
+                    return document.querySelector(s);
+                };
+                var root = document.documentElement;
+                /* ---------- Theme ---------- */
+                $("#thm").onclick = function () {
+                    var dark = root.getAttribute("data-theme")
+                        ? root.getAttribute("data-theme") === "dark"
+                        : matchMedia("(prefers-color-scheme: dark)").matches;
+                    root.setAttribute("data-theme", dark ? "light" : "dark");
+                    $("#thm").textContent = dark ? "🌞" : "🌙";
+                    beep(500, 0.1);
+                };
+                /* ---------- Audio (WebAudio tự tạo, không cần file) ---------- */
+                var AC = null,
+                    soundOn = true;
+                function ctx() {
+                    if (!AC) {
+                        try {
+                            AC = new (
+                                window.AudioContext || window.webkitAudioContext
+                            )();
+                        } catch (e) {}
+                    }
+                    if (AC && AC.state === "suspended") AC.resume();
+                    return AC;
+                }
+                $("#snd").onclick = function () {
+                    soundOn = !soundOn;
+                    $("#snd").textContent = soundOn ? "🔊" : "🔇";
+                };
+                function tone(f, t, d, type, vol) {
+                    var a = ctx();
+                    if (!a || !soundOn) return;
+                    var o = a.createOscillator(),
+                        g = a.createGain();
+                    o.type = type || "sine";
+                    o.frequency.value = f;
+                    g.gain.setValueAtTime(0, a.currentTime + t);
+                    g.gain.linearRampToValueAtTime(
+                        vol || 0.2,
+                        a.currentTime + t + 0.02,
+                    );
+                    g.gain.exponentialRampToValueAtTime(
+                        0.001,
+                        a.currentTime + t + d,
+                    );
+                    o.connect(g);
+                    g.connect(a.destination);
+                    o.start(a.currentTime + t);
+                    o.stop(a.currentTime + t + d + 0.05);
+                }
+                function beep(f, d) {
+                    tone(f, 0, d || 0.1, "square", 0.08);
+                }
+                function meow() {
+                    var a = ctx();
+                    if (!a || !soundOn) return;
+                    var o = a.createOscillator(),
+                        g = a.createGain(),
+                        fl = a.createBiquadFilter(),
+                        n = a.currentTime,
+                        base = 500 + Math.random() * 250;
+                    o.type = "sawtooth";
+                    o.frequency.setValueAtTime(base, n);
+                    o.frequency.linearRampToValueAtTime(base * 1.5, n + 0.18);
+                    o.frequency.exponentialRampToValueAtTime(
+                        base * 0.7,
+                        n + 0.6,
+                    );
+                    fl.type = "bandpass";
+                    fl.frequency.setValueAtTime(900, n);
+                    fl.frequency.linearRampToValueAtTime(1800, n + 0.2);
+                    fl.frequency.linearRampToValueAtTime(700, n + 0.6);
+                    fl.Q.value = 3;
+                    g.gain.setValueAtTime(0, n);
+                    g.gain.linearRampToValueAtTime(0.35, n + 0.08);
+                    g.gain.exponentialRampToValueAtTime(0.001, n + 0.65);
+                    o.connect(fl);
+                    fl.connect(g);
+                    g.connect(a.destination);
+                    o.start(n);
+                    o.stop(n + 0.7);
+                }
+                function song() {
+                    // Happy Birthday (giai điệu dân gian, phổ biến)
+                    var N = {
+                        C: 261.6,
+                        D: 293.7,
+                        E: 329.6,
+                        F: 349.2,
+                        G: 392,
+                        A: 440,
+                        B: 466.2,
+                        c: 523.3,
+                    };
+                    var s = [
+                            ["C", 0.35],
+                            ["C", 0.15],
+                            ["D", 0.5],
+                            ["C", 0.5],
+                            ["F", 0.5],
+                            ["E", 0.9],
+                            ["C", 0.35],
+                            ["C", 0.15],
+                            ["D", 0.5],
+                            ["C", 0.5],
+                            ["G", 0.5],
+                            ["F", 0.9],
+                            ["C", 0.35],
+                            ["C", 0.15],
+                            ["c", 0.5],
+                            ["A", 0.5],
+                            ["F", 0.5],
+                            ["E", 0.5],
+                            ["D", 0.7],
+                            ["B", 0.35],
+                            ["B", 0.15],
+                            ["A", 0.5],
+                            ["F", 0.5],
+                            ["G", 0.5],
+                            ["F", 1],
+                        ],
+                        t = 0;
+                    s.forEach(function (x) {
+                        tone(N[x[0]], t, x[1] * 0.95, "triangle", 0.22);
+                        t += x[1];
+                    });
+                }
+                function tada() {
+                    [523, 659, 784, 1046].forEach(function (f, i) {
+                        tone(f, i * 0.09, 0.3, "square", 0.1);
+                    });
+                }
+                /* ---------- Confetti ---------- */
+                var cv = $("#fx"),
+                    cx = cv.getContext("2d"),
+                    P = [];
+                function size() {
+                    cv.width = innerWidth * devicePixelRatio;
+                    cv.height = innerHeight * devicePixelRatio;
+                }
+                size();
+                addEventListener("resize", size);
+                function boom(x, y, n) {
+                    var d = devicePixelRatio,
+                        cols = [
+                            "#ff5d8f",
+                            "#ffb703",
+                            "#7c5cff",
+                            "#2bb673",
+                            "#4cc9f0",
+                        ];
+                    for (var i = 0; i < (n || 90); i++) {
+                        var a = Math.random() * Math.PI * 2,
+                            v = 4 + Math.random() * 9;
+                        P.push({
+                            x: x * d,
+                            y: y * d,
+                            vx: Math.cos(a) * v * d,
+                            vy: (Math.sin(a) * v - 5) * d,
+                            r: (4 + Math.random() * 5) * d,
+                            c: cols[i % 5],
+                            l: 100 + Math.random() * 60,
+                            e:
+                                Math.random() < 0.2
+                                    ? "😹🐱🎉🐟"[Math.floor(Math.random() * 4)]
+                                    : null,
+                        });
+                    }
+                }
+                (function loop() {
+                    cx.clearRect(0, 0, cv.width, cv.height);
+                    P = P.filter(function (p) {
+                        return p.l > 0;
+                    });
+                    P.forEach(function (p) {
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.vy += 0.25 * devicePixelRatio;
+                        p.vx *= 0.99;
+                        p.l--;
+                        cx.globalAlpha = Math.min(1, p.l / 30);
+                        if (p.e) {
+                            cx.font = p.r * 4 + "px serif";
+                            cx.fillText(p.e, p.x, p.y);
+                        } else {
+                            cx.fillStyle = p.c;
+                            cx.fillRect(p.x, p.y, p.r, p.r * 0.6);
+                        }
+                    });
+                    requestAnimationFrame(loop);
+                })();
+                /* ---------- Mưa mèo nền ---------- */
+                var rainE = ["🐱", "😺", "😹", "😻", "🐈", "🐟", "🎈", "🎂"];
+                setInterval(function () {
+                    if (document.hidden) return;
+                    var e = document.createElement("div");
+                    e.className = "rain";
+                    e.textContent =
+                        rainE[Math.floor(Math.random() * rainE.length)];
+                    e.style.left = Math.random() * 95 + "%";
+                    e.style.fontSize = 18 + Math.random() * 22 + "px";
+                    e.style.animationDuration = 6 + Math.random() * 6 + "s";
+                    document.body.appendChild(e);
+                    setTimeout(function () {
+                        e.remove();
+                    }, 12500);
+                }, 900);
+                /* ---------- Mèo tương tác ---------- */
+                var jokes = [
+                    "Meow! Anh Phát review code em hơi gắt nhưng em vẫn thương 😿",
+                    "Mèo nói: deadline là chuyện của loài người, ăn pate mới là chuyện lớn 🐟",
+                    "Tuổi mới: bug ít lại, bonus dày lên, tóc đừng rụng thêm nha anh 😹",
+                    'Mèo vừa pull request: đổi "Technical Supervisor" thành "Chúa tể Prod" 👑',
+                    "Anh Phát không bao giờ già, chỉ là đang được nâng cấp version thôi 🆙",
+                    "Gừ... ai dám merge thẳng vào main lúc 5h chiều thứ Sáu? 😾",
+                    'Meo meo = "Chúc anh sinh nhật vui, đừng bắt tụi em tăng ca" 🙏',
+                    "Mèo đã kiểm tra: bánh kem có 0 bug, 100% ngon 🍰",
+                    "Anh ơi, cho mèo xin ít bonus mua hạt nha 🥺",
+                ];
+                var cnt = 0,
+                    cat = $("#cat"),
+                    say = $("#say");
+                function talk(t) {
+                    say.classList.remove("pop");
+                    void say.offsetWidth;
+                    say.textContent = t;
+                    say.classList.add("pop");
+                }
+                function pet(e) {
+                    cnt++;
+                    $("#cnt").textContent = cnt;
+                    meow();
+                    cat.classList.remove("hit");
+                    void cat.offsetWidth;
+                    cat.classList.add("hit");
+                    var r = cat.getBoundingClientRect();
+                    boom(r.left + r.width / 2, r.top + r.height / 3, 18);
+                    talk(
+                        cnt === 10
+                            ? "🎉 10 lần rồi! Mèo chính thức công nhận anh là Sen Tối Cao!"
+                            : cnt === 30
+                              ? "Anh rảnh quá, vào code đi 😹"
+                              : jokes[Math.floor(Math.random() * jokes.length)],
+                    );
+                }
+                cat.addEventListener("click", pet);
+                $("#rnd").onclick = function () {
+                    meow();
+                    talk(jokes[Math.floor(Math.random() * jokes.length)]);
+                    scrollTo({ top: 0, behavior: "smooth" });
+                };
+                document.addEventListener("pointermove", function (e) {
+                    var r = cat.getBoundingClientRect(),
+                        dx = e.clientX - (r.left + r.width / 2),
+                        dy = e.clientY - (r.top + r.height / 2),
+                        m = Math.hypot(dx, dy) || 1,
+                        k = Math.min(6, m / 40);
+                    document.querySelectorAll(".pp").forEach(function (p) {
+                        p.style.transform =
+                            "translate(" +
+                            (dx / m) * k +
+                            "px," +
+                            (dy / m) * k +
+                            "px)";
+                    });
+                });
+                /* ---------- Nến ---------- */
+                var cd = $("#candles");
+                for (var i = 0; i < 5; i++) {
+                    var c = document.createElement("div");
+                    c.className = "candle";
+                    c.innerHTML = '<div class="flame"></div>';
+                    c.onclick = function () {
+                        if (!this.classList.contains("off")) {
+                            this.classList.add("off");
+                            beep(900, 0.08);
+                            check();
+                        }
+                    };
+                    cd.appendChild(c);
+                }
+                function check() {
+                    if (!document.querySelector(".candle:not(.off)")) {
+                        tada();
+                        var r = cd.getBoundingClientRect();
+                        boom(r.left + r.width / 2, r.top, 160);
+                        talk(
+                            "🎊 Tắt hết nến! Điều ước của anh sẽ được merge vào main (không cần review) 🎊",
+                        );
+                    }
+                }
+                $("#blow").onclick = function () {
+                    song();
+                    var cs = document.querySelectorAll(".candle");
+                    if (!document.querySelector(".candle:not(.off)"))
+                        cs.forEach(function (c) {
+                            c.classList.remove("off");
+                        });
+                    document
+                        .querySelectorAll(".candle")
+                        .forEach(function (c, i) {
+                            setTimeout(
+                                function () {
+                                    c.classList.add("off");
+                                    beep(700 + i * 80, 0.1);
+                                    check();
+                                },
+                                700 + i * 450,
+                            );
+                        });
+                    boom(innerWidth / 2, innerHeight / 2, 60);
+                };
+                /* ---------- Lời chúc ---------- */
+                var W = [
+                    {
+                        e: "🤖",
+                        n: "Lead AI",
+                        h: "Lật để xem output",
+                        t: '<b>Prompt:</b> "Chúc mừng sinh nhật anh Phát"<br><br>Chúc anh luôn đạt 100% accuracy, không bao giờ bị <i>hallucinate</i> khi họp, và mọi yêu cầu của khách đều rõ ràng ngay lần đầu (ảo thật đấy). Tuổi mới: loss giảm, happiness tăng, tuyệt đối không <i>overfit</i> vào việc bắt team làm lại. Nếu lời chúc này sai, xin nhớ đây là model mới train, anh bỏ qua cho em 🙏😹',
+                    },
+                    {
+                        e: "🛠️",
+                        n: "Lead DevOps",
+                        h: "Lật để xem changelog",
+                        t: "<b>Release note v.Sinh-Nhat:</b><br><br>✅ Uptime 99.99% cho sức khoẻ anh<br>✅ Pipeline xanh lè, không đỏ lúc 2h sáng<br>✅ Zero hotfix tối thứ Sáu<br>✅ Rollback chỉ dùng khi lỡ bấm nhầm, không dùng cho tuổi tác (vì không rollback được 😼)<br><br>Chúc anh luôn scale lương, không scale deadline. Alert nào cũng chỉ là chuông báo bánh kem đến!",
+                    },
+                    {
+                        e: "🐛",
+                        n: "Backend Lỏ",
+                        h: "Lật để xem log",
+                        t: '<b>[INFO]</b> Em code lỏ nhưng lời chúc thì xịn.<br><b>[WARN]</b> Hôm nay xin anh đừng "Request Changes" PR của em.<br><b>[ERROR 500]</b> Em xúc động quá nên crash.<br><br>Chúc anh ít bug, nhiều bonus, ít họp, nhiều cơm. Nếu API trả về chậm, đó là em đang cố gửi trọn vẹn tình cảm. Anh nhớ nương tay với tụi em hoài nha, sếp yêu 🥺❤️',
+                    },
+                ];
+                var cards = $("#cards");
+                W.forEach(function (w) {
+                    var d = document.createElement("div");
+                    d.className = "flip";
+                    d.innerHTML =
+                        '<div class="in"><div class="face"><div class="emo">' +
+                        w.e +
+                        '</div><div class="name">' +
+                        w.n +
+                        '</div><div class="hint">👆 ' +
+                        w.h +
+                        '</div></div><div class="face back"><div>' +
+                        w.t +
+                        "</div></div></div>";
+                    d.onclick = function (e) {
+                        d.classList.toggle("on");
+                        meow();
+                        var r = d.getBoundingClientRect();
+                        boom(r.left + r.width / 2, r.top + 40, 30);
+                    };
+                    cards.appendChild(d);
+                });
+                /* ---------- Pipeline ---------- */
+                var busy = false;
+                $("#dep").onclick = function () {
+                    if (busy) return;
+                    busy = true;
+                    var L = [
+                        '$ git commit -m "feat: chúc mừng sinh nhật anh Phát"',
+                        "$ docker build -t birthday:latest .  ✔ Built (mèo nén image còn 0 byte)",
+                        "$ pytest   ✔ 1 passed: anh_phat_is_the_best",
+                        '$ ai-review  ✔ "LGTM, xuất sắc, 10 điểm" (AI không dám chê)',
+                        "$ terraform apply   ✔ Tạo 1 bánh kem, 5 nến, 99 con mèo",
+                        "$ kubectl rollout status   ✔ 3/3 pods happy",
+                        "$ curl /wish → 200 OK 🎉",
+                        "🚀 DEPLOYED TO PRODUCTION! Chúc mừng sinh nhật anh Phát!",
+                    ];
+                    var t = $("#term"),
+                        pg = $("#pg");
+                    t.innerHTML = "";
+                    pg.style.width = "0";
+                    L.forEach(function (l, i) {
+                        setTimeout(function () {
+                            var d = document.createElement("div");
+                            d.textContent = l;
+                            t.appendChild(d);
+                            beep(400 + i * 60, 0.06);
+                            pg.style.width = ((i + 1) / L.length) * 100 + "%";
+                            if (i === L.length - 1) {
+                                tada();
+                                song();
+                                boom(innerWidth / 2, innerHeight / 3, 200);
+                                busy = false;
+                            }
+                        }, i * 700);
+                    });
+                };
+                /* ---------- Mở màn ---------- */
+                setTimeout(function () {
+                    boom(innerWidth / 2, innerHeight / 3, 70);
+                }, 400);
+            })();
+        </script>
+    </body>
+</html>
